@@ -73,9 +73,7 @@ jobs:
     - name: unit Test with Maven
       run: mvn -B test --file pom.xml
     - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v1.9
-      with:
-        files: "target/surefire-reports/*.xml"
+     
   CodeCoverage:
 
     runs-on: ubuntu-latest
