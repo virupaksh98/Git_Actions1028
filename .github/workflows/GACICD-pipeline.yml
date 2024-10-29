@@ -54,8 +54,8 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
     - name: Static Analysis
       env:
-          GITHUB_TOKEN: ${{ secrets.Git_Token }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.for_demo }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
   UnitTesting:
     runs-on: ubuntu-latest
